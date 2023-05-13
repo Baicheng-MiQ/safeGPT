@@ -37,7 +37,7 @@ res = safe_chat.create(
 )
 
 # Print the response
-print(res.choices[0].text.choices[0].message.content)
+print(res.choices[0].message.content)
 ```
 
 ## Basic Usage
@@ -62,7 +62,7 @@ res = safe_chat.create(
 )
 
 # Print the response
-print(res.choices[0].text.choices[0].message.content)
+print(res.choices[0].message.content)
 ```
 
 ## Handlers
