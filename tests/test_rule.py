@@ -1,5 +1,5 @@
 import unittest
-from safeGPT.rule import *
+from safeGPT.rules import *
 import os
 
 

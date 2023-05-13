@@ -127,3 +127,34 @@ class Replace(Handler):
             source.response.choices[0].message.content = \
                 source.response.choices[0].message.content.replace(kw, self.replace_with)
         return source
+
+class Remove(Handler):
+    def __init__(self, keyword: List[str] | str):
+        if isinstance(keyword, str):
+            keyword = [keyword]
+        self.keyword = keyword
+
+    def handle(self, source: OpenAIChatCompletionWrapper) -> OpenAIChatCompletionWrapper:
+        for kw in self.keyword:
+            source.response.choices[0].message.content = \
+                source.response.choices[0].message.content.replace(kw, "")
+        return source
+
+
+def custom_handler(handler: Callable[[OpenAIChatCompletionWrapper], OpenAIChatCompletionWrapper]) -> Handler:
+    """
+    This function converts a function into a handler.
+    :param handler: A function that takes in a OpenAIChatCompletionWrapper and returns a OpenAIChatCompletionWrapper
+    :return: A handler that executes the function
+
+    Example:
+
+    @custom_handler
+    def my_handler(source: OpenAIChatCompletionWrapper) -> OpenAIChatCompletionWrapper:
+        source.execute()
+        return source
+    """
+    class CustomHandler(Handler):
+        def handle(self, source: OpenAIChatCompletionWrapper) -> OpenAIChatCompletionWrapper:
+            return handler(source)
+    return CustomHandler()

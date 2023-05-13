@@ -1,7 +1,7 @@
 import unittest
 from safeGPT import ChatCompletion
-from safeGPT.rule import *
-from safeGPT.handler import *
+from safeGPT.rules import *
+from safeGPT.handlers import *
 import os
 
 class TestMain(unittest.TestCase):

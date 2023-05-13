@@ -1,1 +1,3 @@
 tests/.env
+.idea
+dist

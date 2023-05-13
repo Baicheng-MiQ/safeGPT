@@ -7,4 +7,5 @@ setup(
     packages=find_packages(),
     install_requires=['openai>=0.27.0'],
     python_requires='>=3.10',
+    url="https://github.com/Baicheng-MiQ/safeGPT"
 )

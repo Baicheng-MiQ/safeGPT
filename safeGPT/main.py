@@ -1,5 +1,5 @@
-from .rule import Rule
-from .handler import Handler
+from .rules import Rule
+from .handlers import Handler
 from .abstraction import OpenAIChatCompletionWrapper
 
 
