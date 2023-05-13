@@ -1,6 +1,5 @@
 LICENSE
 README.md
-pyproject.toml
 setup.py
 safeGPT/__init__.py
 safeGPT/abstraction.py

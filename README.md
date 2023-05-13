@@ -1,7 +1,9 @@
 # safeGPT
 
 ⚡️ Lightweight wrapper for OpenAI's Chat models that adds moderation rules and handlers to your requests.
-
+```bash
+pip install safeGPT
+```
 ## Features
 
 - Add moderation rules to filter out unsafe content from OpenAI's Chat models.
